@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <form class="form-signin">
+            <div class="form-label-group">
+              <input type="text" name="username" class="form-control" placeholder="username" [(ngModel)]="username" required autofocus>
+
+              <!-- <label for="username">User Name</label> -->
+            </div>
+            <br/>
+            <div class="form-label-group">
+              <input type="password" name="password" class="form-control" placeholder="password" [(ngModel)]="password" required>
+              <!-- <label for="password">Password</label> -->
+            </div>
+            <br/>
+            <button (click)=checkLogin() class="btn btn-success">
+              Login
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
