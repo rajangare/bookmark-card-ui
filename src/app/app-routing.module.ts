@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeeComponent } from './employee/employee.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { CardComponent } from './card/card.component';
+import { AddCardComponent } from './add-card/add-card.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import { CradsComponent } from './crads/crads.component';
 
 const routes: Routes = [
-  { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
-  { path: 'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService]},
+  { path: '', component: CardComponent,canActivate:[AuthGaurdService] },
+  { path: 'cards', component: CradsComponent,canActivate:[AuthGaurdService] },
+  { path: 'addemployee', component: AddCardComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
 ];
