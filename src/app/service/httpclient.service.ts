@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export class Employee{
+export class BookmarkCardDto{
   constructor(
-    public empId:string,
-    public name:string,
-    public designation:string,
-    public salary:string,
+    public id:number,
+    public title:string,
+    public longUrl:string,
+    public description:string,
   ) {}
 }
 
@@ -22,7 +22,7 @@ export class HttpClientService {
 
      
 
-     getEmployees()
+     getCards()
   {
     let basicString=this.getHeaders();
 
@@ -30,17 +30,20 @@ export class HttpClientService {
       {Authorization:basicString}
     );
     console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees',{headers});
+    return this.httpClient.get<BookmarkCardDto[]>('http://localhost:8090/api/v1/bookmark-management/cards',{headers});
   }
 
-  public deleteEmployee(employee) {
-    return this.httpClient.delete<Employee>("http://localhost:8080/employees" + "/"+ employee.empId);
+  public deleteCard(bookmarkCardDto) {
+    return this.httpClient.delete<BookmarkCardDto>("http://localhost:8090/api/v1/bookmark-management/cards" + "/"+ bookmarkCardDto.Id);
   }
 
-  public createEmployee(employee) {
-    return this.httpClient.post<Employee>("http://localhost:8080/employees", employee);
+  public createCard(bookmarkCardDto) {
+    return this.httpClient.post<BookmarkCardDto>("http://localhost:8090/api/v1/bookmark-management/cards", bookmarkCardDto);
   }
 
+  public updateCard(bookmarkCardDto) {
+    return this.httpClient.put<BookmarkCardDto>("http://localhost:8090/api/v1/bookmark-management/cards"  + "/"+ bookmarkCardDto.Id, bookmarkCardDto);
+  }
 
 
 getHeaders(){

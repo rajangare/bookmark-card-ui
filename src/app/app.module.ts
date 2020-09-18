@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-import { CradsComponent } from './crads/crads.component';
+
 
 @NgModule({
   declarations: [
@@ -21,8 +21,7 @@ import { CradsComponent } from './crads/crads.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LogoutComponent,
-    CradsComponent
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

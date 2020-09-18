@@ -1,0 +1,20 @@
+<div class="col-md-4">
+  <h2 class="text-center">Create New Card</h2>
+  <form>
+    <div class="form-group">
+      <label for="title">CardTitle :</label>
+      <input type="title" [(ngModel)]="card.titel" placeholder="title" name="title" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input [(ngModel)]="card.description" placeholder="description" name="description" class="form-control" id="description">
+    </div>
+
+    <div class="form-group">
+      <label for="description">ShortUrl:</label>
+      <input [(ngModel)]="card.shortUrl" placeholder="shortUrl" name="shortUrl" class="form-control" id="shortUrl">
+    </div>
+    <button class="btn btn-success" (click)="createNewCard()"  routerLink="/">Create</button>
+  </form>
+  </div>
